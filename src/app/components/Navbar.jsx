@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import NavItem from "./Navitem";
 
-function Navbar() {
+function Navbar({ navItems }) {
   return (
-    <nav>Navbar</nav>
-  )
+    <nav className=" hidden md:flex md:gap-8 lg:flex flex-wrap lg:gap-16">
+      {navItems.map((item, index) => (
+        <NavItem key={index} text={item} />
+      ))}
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;
